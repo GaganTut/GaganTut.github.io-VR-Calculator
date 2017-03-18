@@ -19,38 +19,40 @@ cashMod = (function() {
     if (clickedOperation === false) {
       if (firstNum === 0) {
         firstNum = newNum;
-        screenDisplay = newNum;
+        screenDisplay = parseFloat(firstNum).toFixed(2);
         displayOnScreen();
       } else {
         firstNum += newNum;
-        screenDisplay = firstNum;
+        screenDisplay = parseFloat(firstNum).toFixed(2);
         displayOnScreen();
       }
     } else {
       if (secondNum === 0) {
         secondNum = newNum;
-        screenDisplay = secondNum;
+        screenDisplay = parseFloat(secondNum).toFixed(2);
         displayOnScreen();
       } else {
         secondNum += newNum;
-        screenDisplay = firstNum;
+        screenDisplay = parseFloat(secondNum).toFixed(2);
         displayOnScreen();
       }
     }
   }
 
-  function checkDecimal() {
+  /*function checkDecimal() {
+    var decimalFrame = document.querySelector("#btnDot");
     var checkDec = parseFloat(screenDisplay);
+    console.log(screenDisplay);
     if (checkDec % 1 !== 0 || screenDisplay.indexOf(".") !== -1) {
-      hasDecimal = true;
+      decimalFrame.isPlaying = true;
     } else {
-      hasDecimal = false;
+      decimalFrame.isPlaying = false;
     }
-  }
+  }*/
 
   function displayOnScreen() {
     var calcScreen = document.querySelector("#frameDisplay");
-    calcScreen.setAttribute("text", `value: ${screenDisplay}`);
+    calcScreen.setAttribute("text", `value: ${parseFloat(screenDisplay).toFixed(2)}; color: white; align:center; font: dejavu; width: 10`);
   }
 
   function clickNumKey(value) {
@@ -94,7 +96,7 @@ cashMod = (function() {
       secondNum = 0;
       clickedOperation = false;
     } else if (mltClick) {
-      firstNum = calc.mulitply(parseFloat(firstNum), parseFloat(secondNum));
+      firstNum = calc.multiply(parseFloat(firstNum), parseFloat(secondNum));
       screenDisplay = parseFloat(firstNum).toFixed(2);
       secondNum = 0;
       clickedOperation = false;
@@ -109,41 +111,64 @@ cashMod = (function() {
       secondNum = 0;
       clickedOperation = false;
     }
-    checkDecimal();
+    displayOnScreen();
+    //checkDecimal();
   }
 
   function clickClear() {
     firstNum = 0;
     secondNum = 0;
-    clickedOperation = 0;
+    clickedOperation = false;
 
     divClick = false;
     mltClick = false;
     subClick = false;
-    addClick = true;
+    addClick = false;
 
     screenDisplay = firstNum;
-    checkDecimal();
+    displayOnScreen();
   }
 
   function showBalance() {
     clickClear();
     firstNum = calc.getBalance();
     screenDisplay = calc.getBalance();
+    displayOnScreen();
   }
 
   function depositCash() {
-    calc.depBalance();
+    if (screenDisplay === "Infinity" || screenDisplay === "NaN") {
+      clickClear();
+      displayError();
+    } else {
+      var myCash = parseFloat(screenDisplay);
+      calc.depBalance(myCash);
+    }
   }
 
   function withdrawCash() {
-    calc.wdBalance();
+    var myCash = parseFloat(screenDisplay);
+    if (screenDisplay === "Infinity" || screenDisplay === "NaN" || myCash > calc.getBalance()) {
+      clickClear();
+      displayError();
+    } else {
+      calc.wdBalance(myCash);
+    }
   }
+
+  function displayError() {
+    var calcScreen = document.querySelector("#frameDisplay");
+    calcScreen.setAttribute("text", `value: Unworthy of my Money; color: white; align:center; font: dejavu; width: 10`);
+  }
+
+
+
+  displayOnScreen();
 
 
   return {
     clickNewNum,
-    checkDecimal,
+    //checkDecimal,
     displayOnScreen,
     clickNumKey,
     clickOperation,
