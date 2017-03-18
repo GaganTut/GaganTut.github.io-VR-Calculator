@@ -3,7 +3,7 @@ var frameModular = function() {
   var screenEntAtts = {
     rotation: "30 0 0",
     position: "0 3 -5",
-    material: "color: navy",
+    material: "color: navy; opacity: 0.75",
     geometry : "primitive: plane; width: 10",
     text : "value: 0",
   };
@@ -11,7 +11,7 @@ var frameModular = function() {
   var key7Atts = {
     keyVal: 7,
     position: "-4 2 -6",
-    material: "color: lightsteelblue",
+    material: "color: lightsteelblue; opacity: 0.75",
     geometry : "primitive: plane; width: 2",
     text : "value: 7; color: navy; align: center; font: dejavu; width: 10"
   };
@@ -19,7 +19,7 @@ var frameModular = function() {
   var key8Atts = {
     keyVal: 8,
     position: "-2 2 -6",
-    material: "color: silver",
+    material: "color: silver; opacity: 0.75",
     geometry : "primitive: plane; width: 2",
     text : "value: 8; color: navy; align: center; font: dejavu; width: 10"
   };
@@ -27,7 +27,7 @@ var frameModular = function() {
   var key9Atts = {
     keyVal: 9,
     position: "0 2 -6",
-    material: "color: lightsteelblue",
+    material: "color: lightsteelblue; opacity: 0.75",
     geometry : "primitive: plane; width: 2",
     text : "value: 9; color: navy; align: center; font: dejavu; width: 10"
   };
@@ -35,7 +35,7 @@ var frameModular = function() {
   var key4Atts = {
     keyVal: 4,
     position: "-4 1 -6",
-    material: "color: silver",
+    material: "color: silver; opacity: 0.75",
     geometry : "primitive: plane; width: 2",
     text : "value: 4; color: navy; align: center; font: dejavu; width: 10"
   };
@@ -43,7 +43,7 @@ var frameModular = function() {
   var key5Atts = {
     keyVal: 5,
     position: "-2 1 -6",
-    material: "color: lightsteelblue",
+    material: "color: lightsteelblue; opacity: 0.75",
     geometry : "primitive: plane; width: 2",
     text : "value: 5; color: navy; align: center; font: dejavu; width: 10"
   };
@@ -51,7 +51,7 @@ var frameModular = function() {
   var key6Atts = {
     keyVal: 6,
     position: "0 1 -6",
-    material: "color: silver",
+    material: "color: silver; opacity: 0.75",
     geometry : "primitive: plane; width: 2",
     text : "value: 6; color: navy; align: center; font: dejavu; width: 10"
   };
@@ -59,7 +59,7 @@ var frameModular = function() {
   var key3Atts = {
     keyVal: 3,
     position: "-4 0 -6",
-    material: "color: lightsteelblue",
+    material: "color: lightsteelblue; opacity: 0.75",
     geometry : "primitive: plane; width: 2",
     text : "value: 3; color: navy; align: center; font: dejavu; width: 10"
   };
@@ -67,7 +67,7 @@ var frameModular = function() {
   var key2Atts = {
     keyVal: 2,
     position: "-2 0 -6",
-    material: "color: silver",
+    material: "color: silver; opacity: 0.75",
     geometry : "primitive: plane; width: 2",
     text : "value: 2; color: navy; align: center; font: dejavu; width: 10"
   };
@@ -75,7 +75,7 @@ var frameModular = function() {
   var key1Atts = {
     keyVal: 1,
     position: "0 0 -6",
-    material: "color: lightsteelblue",
+    material: "color: lightsteelblue; opacity: 0.75",
     geometry : "primitive: plane; width: 2",
     text : "value: 1; color: navy; align: center; font: dejavu; width: 10"
   };
@@ -83,7 +83,7 @@ var frameModular = function() {
   var key0Atts = {
     keyVal: 0,
     position: "-4 -1 -6",
-    material: "color: silver",
+    material: "color: silver; opacity: 0.75",
     geometry : "primitive: plane; width: 2",
     text : "value: 0; color: navy; align: center; font: dejavu; width: 10"
   };
@@ -91,7 +91,7 @@ var frameModular = function() {
   var key00Atts = {
     keyVal: "00",
     position: "-2 -1 -6",
-    material: "color: lightsteelblue",
+    material: "color: lightsteelblue; opacity: 0.75",
     geometry : "primitive: plane; width: 2",
     text : "value: 00; color: navy; align: center; font: dejavu; width: 10"
   };
@@ -99,7 +99,7 @@ var frameModular = function() {
   var keyDotAtts = {
     keyVal: ".",
     position: "0 -1 -6",
-    material: "color: silver",
+    material: "color: silver; opacity: 0.75",
     geometry : "primitive: plane; width: 2",
     text : "value: .; color: navy; align: center; font: dejavu; width: 10"
   };
@@ -107,7 +107,7 @@ var frameModular = function() {
   var keyDivAtts = {
     keyVal: "/",
     position: "2 2 -6",
-    material: "color: deepskyblue",
+    material: "color: deepskyblue; opacity: 0.75",
     geometry : "primitive: plane; width: 2",
     text : "value: /; color: white; align: center; font: dejavu; width: 10"
   };
@@ -115,7 +115,7 @@ var frameModular = function() {
   var keyMltAtts = {
     keyVal: "*",
     position: "2 1 -6",
-    material: "color: deepskyblue",
+    material: "color: deepskyblue; opacity: 0.75",
     geometry : "primitive: plane; width: 2",
     text : "value: *; color: white; align: center; font: dejavu; width: 10"
   };
@@ -123,7 +123,7 @@ var frameModular = function() {
   var keySubAtts = {
     keyVal: "-",
     position: "2 0 -6",
-    material: "color: deepskyblue",
+    material: "color: deepskyblue; opacity: 0.75",
     geometry : "primitive: plane; width: 2",
     text : "value: -; color: white; align: center; font: dejavu; width: 10"
   };
@@ -131,44 +131,53 @@ var frameModular = function() {
   var keyAddAtts = {
     keyVal: "+",
     position: "2 -1 -6",
-    material: "color: deepskyblue",
+    material: "color: deepskyblue; opacity: 0.75",
     geometry : "primitive: plane; width: 2",
     text : "value: +; color: white; align: center; font: dejavu; width: 10"
   };
 
   var keyClrAtts = {
     position: "4 2 -6",
-    material: "color: red",
+    material: "color: red; opacity: 0.75",
     geometry : "primitive: plane; width: 2",
     text : "value: Clear; color: white; align: center; font: dejavu; width: 4"
   };
 
   var keyBalAtts = {
     position: "4 1 -6",
-    material: "color: royalblue",
+    material: "color: royalblue; opacity: 0.75",
     geometry : "primitive: plane; width: 2",
     text : "value: Get Balance; color: white; align: center; font: dejavu; width: 4"
   };
 
   var keyDepAtts = {
     position: "4 0 -6",
-    material: "color: royalblue",
+    material: "color: royalblue; opacity: 0.75",
     geometry : "primitive: plane; width: 2",
     text : "value: Deposit Cash; color: white; align: center; font: dejavu; width: 4"
   };
 
   var keyWthAtts = {
     position: "4 -1 -6",
-    material: "color: royalblue",
+    material: "color: royalblue; opacity: 0.75",
     geometry : "primitive: plane; width: 2",
     text : "value: Withdraw Cash; color: white; align: center; font: dejavu; width: 4"
   };
 
   var keyEquAtts = {
     position: "0 -2 -6",
-    material: "color: cyan",
+    material: "color: cyan; opacity: 0.75",
     geometry : "primitive: plane; width: 10",
     text : "value: Equals; color: navy; align: center; font: dejavu; width: 10"
+  };
+
+  var animAtts = {
+    attribute: "material",
+    begin: "myclick",
+    dur: "2000",
+    to: "color: white; opacity: 0",
+    repeat: 2,
+    direction: "alternate"
   };
 
   function addAttribute(htmlID, attribute, value) { // Use ID Selector (ex. "#htmlID")
@@ -189,6 +198,16 @@ var frameModular = function() {
 
     document.querySelector(parentID).appendChild(newElem);
     attsInElements("#" + htmlID, attrObj);
+  }
+
+  function createEvent(parentID, attrObj) {
+    var newAnim = document.createElement("a-animation");
+    for (var objKey in attrObj) {
+      newAnim.objKey = attribute[objKey];
+    }
+
+    var parent = document.querySelector();
+    parent.appendChild(newAnim);
   }
 
   createframeElem("a-entity", "#frameScene", "frameDisplay", screenEntAtts);
@@ -214,9 +233,12 @@ var frameModular = function() {
   createframeElem("a-entity", "#frameScene", "btnWth", keyWthAtts);
   createframeElem("a-entity", "#frameScene", "btnEqu", keyEquAtts);
 
+  //createEvent("#btn7", animAtts);
+
   var key7 = document.querySelector("#btn7");
   key7.addEventListener("click", function(event) {
     cashMod.clickNewNum(event.target.attributes.keyVal.value);
+    key7.emit("myclick");
   });
 
   var key8 = document.querySelector("#btn8");
