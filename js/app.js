@@ -203,10 +203,10 @@ var frameModular = function() {
   function createEvent(parentID, attrObj) {
     var newAnim = document.createElement("a-animation");
     for (var objKey in attrObj) {
-      newAnim.objKey = attribute[objKey];
+      newAnim.objKey = attrObj[objKey];
     }
 
-    var parent = document.querySelector();
+    var parent = document.querySelector(parentID);
     parent.appendChild(newAnim);
   }
 
@@ -233,7 +233,7 @@ var frameModular = function() {
   createframeElem("a-entity", "#frameScene", "btnWth", keyWthAtts);
   createframeElem("a-entity", "#frameScene", "btnEqu", keyEquAtts);
 
-  //createEvent("#btn7", animAtts);
+  createEvent("#btn7", animAtts);
 
   var key7 = document.querySelector("#btn7");
   key7.addEventListener("click", function(event) {

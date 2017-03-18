@@ -39,17 +39,6 @@ cashMod = (function() {
     }
   }
 
-  /*function checkDecimal() {
-    var decimalFrame = document.querySelector("#btnDot");
-    var checkDec = parseFloat(screenDisplay);
-    console.log(screenDisplay);
-    if (checkDec % 1 !== 0 || screenDisplay.indexOf(".") !== -1) {
-      decimalFrame.isPlaying = true;
-    } else {
-      decimalFrame.isPlaying = false;
-    }
-  }*/
-
   function displayOnScreen() {
     var calcScreen = document.querySelector("#frameDisplay");
     calcScreen.setAttribute("text", `value: ${parseFloat(screenDisplay).toFixed(2)}; color: white; align:center; font: dejavu; width: 10`);
@@ -112,7 +101,6 @@ cashMod = (function() {
       clickedOperation = false;
     }
     displayOnScreen();
-    //checkDecimal();
   }
 
   function clickClear() {
@@ -168,7 +156,6 @@ cashMod = (function() {
 
   return {
     clickNewNum,
-    //checkDecimal,
     displayOnScreen,
     clickNumKey,
     clickOperation,
