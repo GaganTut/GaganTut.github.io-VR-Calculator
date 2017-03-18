@@ -9,9 +9,14 @@
   var opBtnClass = document.getElementsByClassName("operationBtn");
   var frameLabel = document.getElementById("calcLabel");
 
+/*  function toFrameLbl() {
+    console.log("text", "value:" + screenDisplay);
+    frameLabel.setAttribute("text", "value: " + screenDisplay);*/
+  }
 
 
-  function clearDisplay() {
+
+/*  function clearDisplay() {
     firstNum = 0;
     secondNum = 0;
     exprClicked = false;
@@ -21,26 +26,25 @@
     }
     screenDisplay.innerHTML = firstNum;
     checkDecimal();
-  }
+  }*/
 
-  function newElement(elemType, parentID, className, htmlID, elemText) {
+/*  function newElement(elemType, parentID, className, htmlID, elemText) {
     var newElem = document.createElement(elemType);
     newElem.id = htmlID;
     newElem.className = className;
-    newElem.innerHTML = elemText;
 
     var parNode = document.getElementById(parentID);
     parNode.appendChild(newElem);
-  }
+  }*/
 
-  function clickNumKey(elemID) {
+  /*function clickNumKey(elemID) {
     var thisNumKey = document.getElementById(elemID);
     thisNumKey.addEventListener("click", function(event) {
       displayOnScreen(event.target.innerHTML);
     });
-  }
+  }*/
 
-  function operationKey(elemID) {
+  /*function operationKey(elemID) {
     var thisOpKey = document.getElementById(elemID);
     thisOpKey.addEventListener("click", function() {
       exprClicked = true;
@@ -49,9 +53,9 @@
       }
       thisOpKey.disabled = true;
     });
-  }
+  }*/
 
-  function displayOnScreen(newNum) {
+  /*function displayOnScreen(newNum) {
     if (exprClicked === false) {
       if (firstNum === 0) {
         firstNum = newNum;
@@ -67,12 +71,12 @@
     } else {
       secondNum += newNum;
       screenDisplay.innerHTML = secondNum;
-    }
+      }
     }
     checkDecimal();
-  }
+  }*/
 
-  function equalSign() {
+/*  function equalSign() {
     var thisEqualBtn = document.getElementById("equalBtn");
     thisEqualBtn.addEventListener("click", function(){
       if (dvdBtn.disabled === true) {
@@ -99,16 +103,16 @@
       }
       checkDecimal();
     });
-  }
+  }*/
 
-  function useClearBtn() {
+ /* function useClearBtn() {
     var thisClearBtn = document.getElementById("clearBtn");
     thisClearBtn.addEventListener("click", function(){
       clearDisplay();
     });
-  }
+  }*/
 
-  function checkDecimal() {
+ /* function checkDecimal() {
     var deciBtn = document.getElementById("btnDot");
     var checkDec = parseFloat(screenDisplay.innerHTML);
     if (checkDec % 1 !== 0 || screenDisplay.innerHTML.indexOf(".") !== -1) {
@@ -116,9 +120,9 @@
     } else {
       deciBtn.disabled = false;
     }
-  }
+  }*/
 
-  function showBalance() {
+/*  function showBalance() {
     var balBtn = document.getElementById("getBalBtn");
     balBtn.addEventListener("click", function() {
       clearDisplay();
@@ -138,7 +142,7 @@
     var withCashBtn = document.getElementById("wtdrBtn");
     withCashBtn.addEventListener("click", function() {
       calc.wdBalance(screenDisplay.innerHTML);
-    });
+    });*/
   }
 
 
@@ -190,6 +194,7 @@
   newElement("a-entity", "frameScene", "fiftheRowBtns", "equalBtn", "=");
   equalSign();
 
+  toFrameLbl();
 })();
 
 (function() {
