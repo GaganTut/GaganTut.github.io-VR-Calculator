@@ -3,6 +3,8 @@ cashMod = (function() {
 
   var calc = calculatorModule();
 
+  var calcScreen = document.querySelector("#frameDisplay");
+
   var firstNum = 0;
   var clickedOperation = false;
   var secondNum = 0;
@@ -40,7 +42,6 @@ cashMod = (function() {
   }
 
   function displayOnScreen() {
-    var calcScreen = document.querySelector("#frameDisplay");
     calcScreen.setAttribute("text", `value: ${parseFloat(screenDisplay).toFixed(2)}; color: white; align:center; font: dejavu; width: 10`);
   }
 
@@ -52,24 +53,40 @@ cashMod = (function() {
     clickedOperation = true;
     switch (value) {
       case "/":
+        if (divClick && secondNum == "0") {
+          displayNumError();
+        } else {
+          equalSign();
+        }
         divClick = true;
         mltClick = false;
         subClick = false;
         addClick = false;
         break;
       case "*":
+        if (mltClick && secondNum == "0") {
+          displayNumError();
+        } else {
+          equalSign();
+        }
         divClick = false;
         mltClick = true;
         subClick = false;
         addClick = false;
         break;
       case "-":
+        if (subClick) {
+          equalSign();
+        }
         divClick = false;
         mltClick = false;
         subClick = true;
         addClick = false;
         break;
       case "+":
+        if (addClick) {
+          equalSign();
+        }
         divClick = false;
         mltClick = false;
         subClick = false;
@@ -83,22 +100,22 @@ cashMod = (function() {
       firstNum = calc.divide(parseFloat(firstNum), parseFloat(secondNum));
       screenDisplay = parseFloat(firstNum).toFixed(2);
       secondNum = 0;
-      clickedOperation = false;
+      //clickedOperation = false;
     } else if (mltClick) {
       firstNum = calc.multiply(parseFloat(firstNum), parseFloat(secondNum));
       screenDisplay = parseFloat(firstNum).toFixed(2);
       secondNum = 0;
-      clickedOperation = false;
+      //clickedOperation = false;
     } else if (subClick) {
       firstNum = calc.subtract(parseFloat(firstNum), parseFloat(secondNum));
       screenDisplay = parseFloat(firstNum).toFixed(2);
       secondNum = 0;
-      clickedOperation = false;
+      //clickedOperation = false;
     } else if (addClick) {
       firstNum = calc.addy(parseFloat(firstNum), parseFloat(secondNum));
       screenDisplay = parseFloat(firstNum).toFixed(2);
       secondNum = 0;
-      clickedOperation = false;
+      //clickedOperation = false;
     }
     displayOnScreen();
   }
@@ -145,8 +162,11 @@ cashMod = (function() {
   }
 
   function displayError() {
-    var calcScreen = document.querySelector("#frameDisplay");
-    calcScreen.setAttribute("text", `value: Unworthy of my Money; color: white; align:center; font: dejavu; width: 10`);
+    calcScreen.setAttribute("text", `value: No Fake Money Here; color: white; align:center; font: dejavu; width: 10`);
+  }
+
+  function displayNumError() {
+    calcScreen.setAttribute("text", `value: Try Again, Hit Clear; color: white; align:center; font: dejavu; width: 10`);
   }
 
 

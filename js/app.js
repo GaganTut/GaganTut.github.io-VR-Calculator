@@ -189,6 +189,15 @@ var frameModular = function() {
     direction: "normal"
   };
 
+  var bankAtts = {
+    attribute: "rotation",
+    begin: "myclick",
+    dur: "300",
+    to: "0 360 0",
+    repeat: 1,
+    direction: "normal"
+  };
+
   var explodeAnim = {
     attribute: "scale",
     begin: "clearClick",
@@ -398,16 +407,19 @@ var frameModular = function() {
   var keyBal = document.querySelector("#btnBal");
   keyBal.addEventListener("click", function(event) {
     cashMod.showBalance();
+    keyBal.emit("myclick");
   });
 
   var keyDep = document.querySelector("#btnDep");
   keyDep.addEventListener("click", function(event) {
     cashMod.depositCash();
+    keyDep.emit("myclick");
   });
 
   var keyWth = document.querySelector("#btnWth");
   keyWth.addEventListener("click", function(event) {
     cashMod.withdrawCash();
+    keyWth.emit("myclick");
   });
 
   var keyEqu = document.querySelector("#btnEqu");
@@ -434,7 +446,9 @@ var frameModular = function() {
   createEvent("#btnSub", operAtts);
   createEvent("#btnAdd", operAtts);
 
-
+  createEvent("#btnBal", bankAtts);
+  createEvent("#btnDep", bankAtts);
+  createEvent("#btnWth", bankAtts);
 
   createEvent("#btnClr", explodeAnim);
   createEvent("#btn9", explodeAnim);
