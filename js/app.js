@@ -1,4 +1,4 @@
-≠≠var frameModular = function() {
+var frameModular = function() {
 
   var screenEntAtts = {
     rotation: "30 0 0",
