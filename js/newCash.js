@@ -142,7 +142,7 @@ cashMod = (function() {
   }
 
   function depositCash() {
-    if (screenDisplay === "Infinity" || screenDisplay === "NaN") {
+    if (screenDisplay === "Infinity" || screenDisplay === "NaN" || screenDisplay < 0) {
       clickClear();
       displayError();
     } else {
