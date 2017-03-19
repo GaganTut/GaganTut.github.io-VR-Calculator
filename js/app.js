@@ -286,8 +286,6 @@ var frameModular = function() {
   key7.addEventListener("click", function(event) {
     cashMod.clickNewNum(event.target.attributes.keyVal.value);
     key7.emit("myclick");
-
-    console.log(event);
   });
 
   var key8 = document.querySelector("#btn8");
